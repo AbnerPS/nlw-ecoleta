@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from './styles'
-import { View, Text, TouchableOpacity, ScrollView, Image, Alert } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView, Image, Alert, SafeAreaView } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { Feather as Icon } from '@expo/vector-icons'
 import api from '../../services/api'
@@ -92,7 +92,7 @@ const Points = () => {
     }
 
     return (
-        <>
+        <SafeAreaView style={{ flex: 1 }}>
             <View style={styles.container}>
                 <TouchableOpacity onPress={handleNavigateBack}>
                     <Icon style={styles.iconLogout} name="log-out" size={25} />
@@ -142,15 +142,15 @@ const Points = () => {
                             styles.item,
                             selectedItems.includes(item.id) ? styles.selectedItem : {}
                         ]}
-                        activeOpacity={0.6}
-                        onPress={() => handleSelectedItem(item.id)}>
+                        onPress={() => handleSelectedItem(item.id)}
+                        activeOpacity={0.6}>
                             <SvgUri width="42" height="42" uri={item.image_url}/>
                             <Text style={styles.itemTitle}>{item.title}</Text>
                         </TouchableOpacity>
                     ))}
                 </ScrollView>
             </View>
-        </>
+        </SafeAreaView>
     )
 }
 
