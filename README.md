@@ -106,7 +106,7 @@ Segue abaixo uma lista com as principais técnologias utilizados no desenvolvime
 </p>
 
  # :tv: Redes Sociais
- Me siga nas minhas redes sociais :)
+ Me siga nas minhas redes sociais 😊
  
    <a href="https://github.com/AbnerPS" target="_blank" >
     <img alt="Github" src="https://img.shields.io/badge/Github--%23F8952D?style=social&logo=github"></a> 
