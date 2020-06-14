@@ -41,7 +41,7 @@ class PointsController{
 
         const serializedPoint = {
             ...point,
-            image_url: `http://192.168.25.82:3333/uploads/${point.image}`
+            image_url: `http://localhost:3333/uploads/${point.image}`
         }
         
 
