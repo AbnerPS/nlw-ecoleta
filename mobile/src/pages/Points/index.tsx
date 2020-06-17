@@ -30,16 +30,16 @@ interface Params {
 
 const Points = () => {
     const navigation = useNavigation()
+    const route = useRoute()
+    const routeParams = route.params as Params
     const [items, setItems] = useState<Item[]>([])
     const [points, setPoints] = useState<Points[]>([])
     const [selectedItems, setSelectedItems] = useState<number[]>([])
     const [initialPosition, setInitialPosition] = useState<[number, number]>([0,0])
-    const route = useRoute()
-    const routeParams = route.params as Params
 
     useEffect(() => {
-        api.get('items').then(response => {
-            setItems(response.data)
+        api.get('/items').then(response => {
+            setItems(response.data.serializedItems)
         })
     },[])
 
@@ -55,13 +55,15 @@ const Points = () => {
             const location = await Location.getCurrentPositionAsync()
 
             const { latitude, longitude} = location.coords
+
+            setInitialPosition([latitude, longitude])
         }
 
         loadPosition()
     }, [])
 
     useEffect(() => {
-        api.get('points', {
+        api.get('/points', {
             params: {
                 city: routeParams.city,
                 uf: routeParams.uf,
@@ -111,13 +113,13 @@ const Points = () => {
                             latitudeDelta: 0.014,
                             longitudeDelta: 0.014
                         }}>
-                            {points.map(point => {
-                                <Marker style={styles.mapMarker}
-                                key={String(point.id)}
+                            {points.map(point => (
+                                <Marker key={String(point.id)}
+                                style={styles.mapMarker}
                                 onPress={() => handleNavigateToDetail(point.id)}
                                 coordinate={{
-                                    latitude: point.latitude,
-                                    longitude: point.longitude}}>
+                                    latitude: -23.399037,
+                                    longitude: -46.753129}}>
                                         
                                     <View style={styles.mapMarkerContainer}>
                                         <Image style={styles.mapMarkerImage}
@@ -125,7 +127,7 @@ const Points = () => {
                                         <Text style={styles.mapMarkerTitle}>{point.name}</Text>
                                     </View>
                                 </Marker>
-                            })}
+                            ))}
                         </MapView>
                     )}
                 </View>

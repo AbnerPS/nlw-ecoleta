@@ -94,6 +94,7 @@ export default StyleSheet.create({
     selectedItem: {
       borderColor: '#34CB79',
       borderWidth: 2,
+      backgroundColor: '#E1FAEC',
     },
   
     itemTitle: {

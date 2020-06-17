@@ -106,7 +106,7 @@ async function handleSubmit(event: FormEvent) {
     event.preventDefault()
 
     const { name, email, whatsapp } = formData
-    const   uf = selectedUf
+    const uf = selectedUf
     const city = selectedCity
     const [latitude, longitude] = selectedPosition
     const items = selectedItems
@@ -124,10 +124,13 @@ async function handleSubmit(event: FormEvent) {
     if(selectedFile) {
         data.append('image', selectedFile)
     }
+    
     await api.post('/points', data)
 
     alert('Ponto de coletada cadastrado')
+
     history.push('/')
+    
 }
 
     return (
@@ -160,8 +163,8 @@ async function handleSubmit(event: FormEvent) {
                             <input type="email" name="email" id="email" onChange={handleInputChange}/>
                         </div>
                         <div className="field">
-                            <label htmlFor="whastapp">Whastapp</label>
-                            <input type="text" name="whastapp" id="whastapp" onChange={handleInputChange}/>
+                            <label htmlFor="whatsapp">Whatsapp</label>
+                            <input type="text" name="whatsapp" id="whatsapp" onChange={handleInputChange}/>
                         </div>
                     </div>
                 </fieldset>

@@ -8,6 +8,7 @@ export default StyleSheet.create({
     },
 
     iconLogout: {
+      marginTop: 20,
       color: "#34CB79",
       transform: [{rotate: "180deg"}]
     },
@@ -26,10 +27,17 @@ export default StyleSheet.create({
       fontFamily: 'Ubuntu_700Bold',
       marginTop: 24,
     },
+
+    itemsTitle: {
+      marginTop: 20,
+      color: '#322153',
+      fontFamily: 'Roboto_500Medium',
+      fontSize: 20,
+    },
   
     pointItems: {
       fontFamily: 'Roboto_400Regular',
-      fontSize: 16,
+      fontSize: 18,
       lineHeight: 24,
       marginTop: 8,
       color: '#6C6C80'
@@ -42,11 +50,12 @@ export default StyleSheet.create({
     addressTitle: {
       color: '#322153',
       fontFamily: 'Roboto_500Medium',
-      fontSize: 16,
+      fontSize: 22,
     },
   
     addressContent: {
       fontFamily: 'Roboto_400Regular',
+      fontSize: 18,
       lineHeight: 24,
       marginTop: 8,
       color: '#6C6C80'
