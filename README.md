@@ -102,13 +102,13 @@ Segue abaixo uma lista com as principais técnologias utilizados no desenvolvime
 # :iphone: Imagens do App Mobile
 
 <p align="center">
-  <img src="./screenshots/mobile_home-page.png" alt="Mobile Home Page" width="500">
+  <img src="./screenshots/mobile_home-page.png" alt="Mobile Home Page" width="350">
 
-  <img src="./screenshots/mobile_points-page_01.png" alt="Mobile Points Page" width="500">
+  <img src="./screenshots/mobile_points-page_01.png" alt="Mobile Points Page" width="350">
 
-  <img src="./screenshots/mobile_points-page_02.png" alt="Mobile Points Page" width="500">
+  <img src="./screenshots/mobile_points-page_02.png" alt="Mobile Points Page" width="350">
 
-  <img src="./screenshots/mobile_details-page.png" alt="Mobile Details Page" width="500">
+  <img src="./screenshots/mobile_details-page.png" alt="Mobile Details Page" width="350">
 </p>
 
  # :tv: Redes Sociais
