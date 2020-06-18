@@ -26,14 +26,14 @@ interface IBGECityResponse {
 const CreatePoint = () => {
     const [items, setItems] = useState<Item[]>([])
     const [ufs, setUfs] = useState<string[]>([])
-    const [selectedUf, setSelectedUf] = useState('')
     const [cities, setCities] = useState<string[]>([])
-    const [selectedCity, setSelectedCity] = useState('0')
     const [initialPosition, setInitialPosition] = useState<[number, number]>([0, 0])
-    const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0, 0])
     const [formData, setFormData] = useState({name:'', email:'', whatsapp:''})
+    const [selectedUf, setSelectedUf] = useState('')
+    const [selectedCity, setSelectedCity] = useState('0')
     const [selectedItems, setSelectedItems] = useState<number[]>([])
     const [selectedFile, setSelectedFile] = useState<File>()
+    const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0, 0])
     const history = useHistory()
     
     useEffect(() => {

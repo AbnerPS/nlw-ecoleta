@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
 
+
 export default StyleSheet.create({
     container: {
       flex: 1,
@@ -40,6 +41,37 @@ export default StyleSheet.create({
       paddingHorizontal: 24,
       fontSize: 16,
     },
+
+    pickerArea: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginBottom: 20,
+    },
+
+    pickerSelectUF: {
+      fontSize: 18,
+      fontFamily: 'Roboto_500Medium',
+      width: 50,
+      paddingHorizontal: 10,
+      paddingVertical: 12,
+      borderWidth: 2,
+      borderColor: '#fff',
+      borderRadius: 10,
+      backgroundColor: '#fff',
+    },
+
+    pickerSelectCity: {
+      fontSize: 18,
+      fontFamily: 'Roboto_500Medium',
+      width: 240,
+      paddingHorizontal: 5,
+      paddingVertical: 12,
+      borderWidth: 2,
+      borderRadius: 10,
+      paddingRight: 5,
+      borderColor: '#fff',
+      backgroundColor: '#fff',
+    },
   
     button: {
       backgroundColor: '#34CB79',
@@ -48,7 +80,7 @@ export default StyleSheet.create({
       borderRadius: 10,
       overflow: 'hidden',
       alignItems: 'center',
-      marginTop: 8,
+      marginTop: 20,
     },
   
     buttonIcon: {
@@ -65,6 +97,6 @@ export default StyleSheet.create({
       textAlign: 'center',
       color: '#FFF',
       fontFamily: 'Roboto_500Medium',
-      fontSize: 16,
+      fontSize: 25,
     }
   });
