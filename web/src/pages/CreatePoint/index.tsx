@@ -1,9 +1,10 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent }from 'react'
 import './styles.css'
 import { Link , useHistory } from 'react-router-dom'
-import { FiArrowLeft } from 'react-icons/fi'
+import { FiArrowLeft, FiCheckCircle } from 'react-icons/fi'
 import { Map, TileLayer, Marker} from 'react-leaflet'
 import { LeafletMouseEvent } from 'leaflet'
+import Modal from 'react-modal'
 import api from '../../services/api'
 import Dropzone from '../../components/Dropzone'
 import axios from 'axios'
@@ -34,7 +35,10 @@ const CreatePoint = () => {
     const [selectedItems, setSelectedItems] = useState<number[]>([])
     const [selectedFile, setSelectedFile] = useState<File>()
     const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0, 0])
+    const [modalIsOpen, setIsOpen] = useState(false)
     const history = useHistory()
+
+    Modal.setAppElement('#root')
     
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(position => {
@@ -127,10 +131,22 @@ async function handleSubmit(event: FormEvent) {
     
     await api.post('/points', data)
 
-    alert('Ponto de coletada cadastrado')
+    openModal()
 
-    history.push('/')
+    setTimeout(() => {
+        closeModal()
+        history.push('/')
+    }, 2000)
     
+}
+
+function openModal() {
+    setIsOpen(true)
+}
+
+function closeModal() {
+    setIsOpen(false)
+    // history.push('/')
 }
 
     return (
@@ -227,6 +243,30 @@ async function handleSubmit(event: FormEvent) {
                     Cadastrar ponto de coleta
                 </button>
             </form>
+
+            <Modal isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+
+            style={{
+                overlay: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                },
+                content:{
+                    top: '50%',
+                    left: '50%',
+                    right: 'auto',
+                    bottom: 'auto',
+                    marginRight: '-50%',
+                    transform: 'translate(-50%, -50%)',
+                    border: 'none',
+                }
+            }}
+            contentLabel="Confirmação">
+                <div className="modal">
+                    <span><FiCheckCircle size={60} color='#2FB86E'/></span>
+                    <h1>Cadastro realizado com sucesso</h1>
+                </div>
+            </Modal>
         </div>
     )
 }

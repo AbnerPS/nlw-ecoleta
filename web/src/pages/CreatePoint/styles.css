@@ -189,6 +189,12 @@
   #page-create-point form button:hover {
     background: #2FB86E;
   }
+
+  .modal span{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
   
   .items-grid {
     display: grid;
